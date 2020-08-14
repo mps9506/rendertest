@@ -15,20 +15,14 @@ knitr::opts_chunk$set(
 
 # rendertest
 
-<!-- badges: start -->
-[![R build status](https://github.com/mps9506/rendertest/workflows/R-CMD-check/badge.svg)](https://github.com/mps9506/rendertest/actions)
-<!-- badges: end -->
-
 Trying to figure out encoding problems when I use github actions to render readme and pkgdown websites.
 
 
-```
 ## Example
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
 ```{r cars}
-library(dplyr)
 head(tibble::as_tibble(cars))
 ```
 

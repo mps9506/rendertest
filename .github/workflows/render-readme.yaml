@@ -8,7 +8,7 @@ on:
 jobs:
   render:
     # The type of runner that the job will run on
-    runs-on: macOS-latest
+    runs-on: windows-latest
 
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -18,7 +18,7 @@ jobs:
 
     # install packages needed
     - name: install required packages
-      run: Rscript -e 'install.packages(c("rmarkdown","dplyr","tibble"))'
+      run: Rscript -e 'install.packages(c("rmarkdown", "tibble"))'
 
     # Render READEME.md using rmarkdown
     - name: render README
