@@ -18,7 +18,7 @@ jobs:
 
     # install packages needed
     - name: install required packages
-      run: Rscript -e 'install.packages(c("rmarkdown","dplyr"))'
+      run: Rscript -e 'install.packages(c("rmarkdown","dplyr","tibble"))'
 
     # Render READEME.md using rmarkdown
     - name: render README
