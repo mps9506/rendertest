@@ -19,27 +19,15 @@ knitr::opts_chunk$set(
 [![R build status](https://github.com/mps9506/rendertest/workflows/R-CMD-check/badge.svg)](https://github.com/mps9506/rendertest/actions)
 <!-- badges: end -->
 
-The goal of rendertest is to ...
+Trying to figure out encoding problems when I use github actions to render readme and pkgdown websites.
 
-## Installation
 
-You can install the released version of rendertest from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("rendertest")
-```
-
-And the development version from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("devtools")
-devtools::install_github("mps9506/rendertest")
 ```
 ## Example
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r cars, results='asis'}
+```{r cars}
 library(dplyr)
 head(tibble::as_tibble(cars))
 ```
