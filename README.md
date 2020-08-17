@@ -11,9 +11,8 @@ knitr::opts_chunk$set(
 
 library(tibble)
 
-## from: https://fromthebottomoftheheap.net/2019/01/22/using-tibbles-and-example-checking/
-op <- options(cli.unicode = FALSE)
-options(op)
+## from: https://github.com/r-lib/crayon/issues/96
+options(crayon.enabled = NULL)
 ```
 
 # rendertest
@@ -25,20 +24,20 @@ render readme and pkgdown websites.
 
 ``` r
 as_tibble(cars)
-#> [90m# A tibble: 50 x 2[39m
+#> # A tibble: 50 x 2
 #>    speed  dist
-#>    [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m
-#> [90m 1[39m     4     2
-#> [90m 2[39m     4    10
-#> [90m 3[39m     7     4
-#> [90m 4[39m     7    22
-#> [90m 5[39m     8    16
-#> [90m 6[39m     9    10
-#> [90m 7[39m    10    18
-#> [90m 8[39m    10    26
-#> [90m 9[39m    10    34
-#> [90m10[39m    11    17
-#> [90m# … with 40 more rows[39m
+#>    <dbl> <dbl>
+#>  1     4     2
+#>  2     4    10
+#>  3     7     4
+#>  4     7    22
+#>  5     8    16
+#>  6     9    10
+#>  7    10    18
+#>  8    10    26
+#>  9    10    34
+#> 10    11    17
+#> # … with 40 more rows
 ```
 
 ## unicode
