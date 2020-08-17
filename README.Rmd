@@ -23,10 +23,14 @@ Trying to figure out encoding problems when I use github actions to render readm
 
 ```{r cars}
 tibble::as_tibble(cars)
+
+## from: https://fromthebottomoftheheap.net/2019/01/22/using-tibbles-and-example-checking/
+op <- options(cli.unicode = FALSE)
+tibble::as_tibble(cars)
 ```
 
 ## unicode
- 
+
 Ā  ā Ġ ☂
 
 ## session
