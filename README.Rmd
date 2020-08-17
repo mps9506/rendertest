@@ -4,13 +4,19 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+library(tibble)
+
+## from: https://fromthebottomoftheheap.net/2019/01/22/using-tibbles-and-example-checking/
+op <- options(cli.unicode = FALSE)
+options(op)
 ```
 
 # rendertest
@@ -22,12 +28,7 @@ Trying to figure out encoding problems when I use github actions to render readm
 
 
 ```{r cars}
-tibble::as_tibble(cars)
-
-## from: https://fromthebottomoftheheap.net/2019/01/22/using-tibbles-and-example-checking/
-op <- options(cli.unicode = FALSE)
-options(op)
-tibble::as_tibble(cars)
+as_tibble(cars)
 ```
 
 ## unicode
