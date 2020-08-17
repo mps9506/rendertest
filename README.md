@@ -27,6 +27,7 @@ tibble::as_tibble(cars)
 
 ## from: https://fromthebottomoftheheap.net/2019/01/22/using-tibbles-and-example-checking/
 op <- options(cli.unicode = FALSE)
+options(op)
 tibble::as_tibble(cars)
 #> [90m# A tibble: 50 x 2[39m
 #>    speed  dist
@@ -41,7 +42,7 @@ tibble::as_tibble(cars)
 #> [90m 8[39m    10    26
 #> [90m 9[39m    10    34
 #> [90m10[39m    11    17
-#> [90m# ... with 40 more rows[39m
+#> [90m# … with 40 more rows[39m
 ```
 
 ## unicode
@@ -52,7 +53,7 @@ tibble::as_tibble(cars)
 
 ``` r
 sessioninfo::session_info()
-#> - Session info ---------------------------------------------------------------
+#> ─ Session info ───────────────────────────────────────────────────────────────
 #>  setting  value                       
 #>  version  R version 4.0.2 (2020-06-22)
 #>  os       Ubuntu 18.04.4 LTS          
@@ -64,7 +65,7 @@ sessioninfo::session_info()
 #>  tz       UTC                         
 #>  date     2020-08-17                  
 #> 
-#> - Packages -------------------------------------------------------------------
+#> ─ Packages ───────────────────────────────────────────────────────────────────
 #>  package     * version date       lib source        
 #>  assertthat    0.2.1   2019-03-21 [1] CRAN (R 4.0.2)
 #>  cli           2.0.2   2020-02-28 [1] CRAN (R 4.0.2)
