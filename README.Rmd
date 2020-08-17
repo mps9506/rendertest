@@ -14,9 +14,8 @@ knitr::opts_chunk$set(
 
 library(tibble)
 
-## from: https://fromthebottomoftheheap.net/2019/01/22/using-tibbles-and-example-checking/
-op <- options(cli.unicode = FALSE)
-options(op)
+## from: https://github.com/r-lib/crayon/issues/96
+options(crayon.enabled = NULL)
 ```
 
 # rendertest
