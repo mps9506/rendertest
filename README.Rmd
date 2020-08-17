@@ -22,7 +22,7 @@ Trying to figure out encoding problems when I use github actions to render readm
 
 
 ```{r cars}
-head(tibble::as_tibble(cars))
+tibble::as_tibble(cars)
 ```
 
 ## unicode
