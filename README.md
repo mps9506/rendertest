@@ -1,6 +1,21 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+``` r
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+library(tibble)
+
+## from: https://fromthebottomoftheheap.net/2019/01/22/using-tibbles-and-example-checking/
+op <- options(cli.unicode = FALSE)
+options(op)
+```
+
 # rendertest
 
 Trying to figure out encoding problems when I use github actions to
@@ -9,26 +24,7 @@ render readme and pkgdown websites.
 ## Example
 
 ``` r
-tibble::as_tibble(cars)
-#> [90m# A tibble: 50 x 2[39m
-#>    speed  dist
-#>    [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m
-#> [90m 1[39m     4     2
-#> [90m 2[39m     4    10
-#> [90m 3[39m     7     4
-#> [90m 4[39m     7    22
-#> [90m 5[39m     8    16
-#> [90m 6[39m     9    10
-#> [90m 7[39m    10    18
-#> [90m 8[39m    10    26
-#> [90m 9[39m    10    34
-#> [90m10[39m    11    17
-#> [90m# … with 40 more rows[39m
-
-## from: https://fromthebottomoftheheap.net/2019/01/22/using-tibbles-and-example-checking/
-op <- options(cli.unicode = FALSE)
-options(op)
-tibble::as_tibble(cars)
+as_tibble(cars)
 #> [90m# A tibble: 50 x 2[39m
 #>    speed  dist
 #>    [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m
@@ -86,7 +82,7 @@ sessioninfo::session_info()
 #>  sessioninfo   1.1.1   2018-11-05 [1] CRAN (R 4.0.2)
 #>  stringi       1.4.6   2020-02-17 [1] CRAN (R 4.0.2)
 #>  stringr       1.4.0   2019-02-10 [1] CRAN (R 4.0.2)
-#>  tibble        3.0.3   2020-07-10 [1] CRAN (R 4.0.2)
+#>  tibble      * 3.0.3   2020-07-10 [1] CRAN (R 4.0.2)
 #>  utf8          1.1.4   2018-05-24 [1] CRAN (R 4.0.2)
 #>  vctrs         0.3.2   2020-07-15 [1] CRAN (R 4.0.2)
 #>  withr         2.2.0   2020-04-20 [1] CRAN (R 4.0.2)
