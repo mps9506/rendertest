@@ -8,7 +8,7 @@ on:
 jobs:
   render:
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -18,11 +18,16 @@ jobs:
 
     # install packages needed
     - name: install required packages
-      run: Rscript -e 'install.packages(c("rmarkdown", "tibble"))'
+      run: |
+        install.packages("remotes")
+        remotes::install_local(".")
+        remotes::install_cran("rmarkdown")
+        install.packages(c("tibble", "sessioninfo")
+      shell: Rscript {0}
 
     # Render READEME.md using rmarkdown
     - name: render README
-      run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
+      run: Rscript -e 'rmarkdown::render("README.Rmd")'
 
     - name: commit rendered README
       run: |
