@@ -8,9 +8,6 @@ render readme and pkgdown websites.
 
 ## Example
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
 ``` r
 head(tibble::as_tibble(cars))
 #> [90m# A tibble: 6 x 2[39m
@@ -24,15 +21,11 @@ head(tibble::as_tibble(cars))
 #> [90m6[39m     9    10
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
+## unicode
 
-You can also embed plots, for example:
+Ā ā Ġ ☂
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+## session
 
 ``` r
 sessioninfo::session_info()
