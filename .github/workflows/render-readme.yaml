@@ -22,7 +22,7 @@ jobs:
         install.packages("remotes")
         remotes::install_local(".")
         remotes::install_cran("rmarkdown")
-        install.packages(c("tibble", "sessioninfo")
+        install.packages(c("tibble", "sessioninfo"))
       shell: Rscript {0}
 
     # Render READEME.md using rmarkdown
