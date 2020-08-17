@@ -25,6 +25,10 @@ jobs:
         install.packages(c("tibble", "sessioninfo"))
       shell: Rscript {0}
 
+    # set options
+    - name: set options
+      run: Rscript -e 'options(crayon.enabled = NULL)'
+
     # Render READEME.md using rmarkdown
     - name: render README
       run: Rscript -e 'rmarkdown::render("README.Rmd")'
