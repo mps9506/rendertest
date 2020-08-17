@@ -26,6 +26,7 @@ tibble::as_tibble(cars)
 
 ## from: https://fromthebottomoftheheap.net/2019/01/22/using-tibbles-and-example-checking/
 op <- options(cli.unicode = FALSE)
+options(op)
 tibble::as_tibble(cars)
 ```
 
