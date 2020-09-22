@@ -6,7 +6,7 @@ documentclass: book
 output:
   bookdown::gitbook: default
   bookdown::pdf_book:
-    latex_engine: xelatex
+    latex_engine: lualatex
 ---
 
 ```{r}
@@ -33,10 +33,10 @@ Try fansi hooks
 Check the rmarkdown output, if it is some type of html, use `fansi` highlighting. If it is pdf don't change the knitr hooks.
 
 ```{r}
-output <- rmarkdown::all_output_formats(knitr::current_input())[1]
-output
+output_fmt <- knitr::opts_knit$get("rmarkdown.pandoc.to")
 
-if (output %in% c("html_document", "bookdown::html_document2", "bookdown::gitbook")) {
+
+if (output_fmt == "html") {
   old.hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
   }
 
@@ -59,7 +59,9 @@ as_tibble(cars)
 Restore default hooks
 
 ```{r}
-do.call(knitr::knit_hooks$set, old.hooks)
+if (output_fmt == "html") {
+  do.call(knitr::knit_hooks$set, old.hooks)
+}
 ```
 
 
