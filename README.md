@@ -48,6 +48,22 @@ render readme and pkgdown websites.
 #> [1] ""
 ```
 
+``` r
+crayon::has_color()
+#> [1] TRUE
+```
+
+``` r
+er <- errorCondition(
+  message = paste("crayon::has_color() ?:",
+                  crayon::has_color(),
+                  "\nresult:",
+                  crayon::red("A barfoo error")))
+er
+#> <error: crayon::has_color() ?: TRUE 
+#> result: [31mA barfoo error[39m>
+```
+
 ## Example
 
 Print a tibble:
