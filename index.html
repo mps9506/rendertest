@@ -31,7 +31,7 @@
   
   
 
-<link rel="next" href="rendertest.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -129,14 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hello World</a></li>
-<li class="chapter" data-level="2" data-path="rendertest.html"><a href="rendertest.html"><i class="fa fa-check"></i><b>2</b> rendertest</a><ul>
-<li class="chapter" data-level="2.1" data-path="rendertest.html"><a href="rendertest.html#example"><i class="fa fa-check"></i><b>2.1</b> Example</a></li>
-<li class="chapter" data-level="2.2" data-path="rendertest.html"><a href="rendertest.html#unicode"><i class="fa fa-check"></i><b>2.2</b> unicode</a></li>
-<li class="chapter" data-level="2.3" data-path="rendertest.html"><a href="rendertest.html#example-crayon"><i class="fa fa-check"></i><b>2.3</b> Example Crayon</a></li>
-<li class="chapter" data-level="2.4" data-path="rendertest.html"><a href="rendertest.html#set-options"><i class="fa fa-check"></i><b>2.4</b> Set options</a></li>
-<li class="chapter" data-level="2.5" data-path="rendertest.html"><a href="rendertest.html#session"><i class="fa fa-check"></i><b>2.5</b> session</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="#hello-world"><i class="fa fa-check"></i><b>1</b> Hello World</a></li>
 </ul>
 
       </nav>
@@ -160,18 +153,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="hello-world" class="section level1">
 <h1><span class="header-section-number">1</span> Hello World</h1>
-<p>Hi.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a>old.hooks &lt;-<span class="st"> </span>fansi<span class="op">::</span><span class="kw">set_knit_hooks</span>(knitr<span class="op">::</span>knit_hooks)</span></code></pre></div>
+<p>Example with default options.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">cat</span>(<span class="kw">blue</span>(<span class="st">&quot;Hello&quot;</span>, <span class="st">&quot;world!</span><span class="ch">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## [34mHello world!
+## [39m</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">as_tibble</span>(cars)</span></code></pre></div>
+<pre><code>## [90m# A tibble: 50 x 2[39m
+##    speed  dist
+##    [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m
+## [90m 1[39m     4     2
+## [90m 2[39m     4    10
+## [90m 3[39m     7     4
+## [90m 4[39m     7    22
+## [90m 5[39m     8    16
+## [90m 6[39m     9    10
+## [90m 7[39m    10    18
+## [90m 8[39m    10    26
+## [90m 9[39m    10    34
+## [90m10[39m    11    17
+## [90m# … with 40 more rows[39m</code></pre>
+<p>Try fansi hooks</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>old.hooks &lt;-<span class="st"> </span>fansi<span class="op">::</span><span class="kw">set_knit_hooks</span>(knitr<span class="op">::</span>knit_hooks)</span></code></pre></div>
 <pre><code>## &lt;STYLE type=&#39;text/css&#39; scoped&gt;
 ## PRE.fansi SPAN {padding-top: .25em; padding-bottom: .25em};
 ## &lt;/STYLE&gt;</code></pre>
-<p>Bye.</p>
 <p>Please render correctly</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1"></a><span class="kw">cat</span>(<span class="kw">blue</span>(<span class="st">&quot;Hello&quot;</span>, <span class="st">&quot;world!</span><span class="ch">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">cat</span>(<span class="kw">blue</span>(<span class="st">&quot;Hello&quot;</span>, <span class="st">&quot;world!</span><span class="ch">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
 <PRE class="fansi fansi-output"><CODE>## <span style='color: #0000BB;'>Hello world!
 ## </span><span>
 </span></CODE></PRE>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1"></a><span class="kw">as_tibble</span>(cars)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">as_tibble</span>(cars)</span></code></pre></div>
 <PRE class="fansi fansi-output"><CODE>## <span style='color: #555555;'># A tibble: 50 x 2</span><span>
 ##    speed  dist
 ##    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
@@ -187,21 +198,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## </span><span style='color: #555555;'>10</span><span>    11    17
 ## </span><span style='color: #555555;'># … with 40 more rows</span><span>
 </span></CODE></PRE>
+<p>Restore default hooks</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">do.call</span>(knitr<span class="op">::</span>knit_hooks<span class="op">$</span>set, old.hooks)</span></code></pre></div>
+<p>Please render incorrectly</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">cat</span>(<span class="kw">blue</span>(<span class="st">&quot;Hello&quot;</span>, <span class="st">&quot;world!</span><span class="ch">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## [34mHello world!
+## [39m</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">as_tibble</span>(cars)</span></code></pre></div>
+<pre><code>## [90m# A tibble: 50 x 2[39m
+##    speed  dist
+##    [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m
+## [90m 1[39m     4     2
+## [90m 2[39m     4    10
+## [90m 3[39m     7     4
+## [90m 4[39m     7    22
+## [90m 5[39m     8    16
+## [90m 6[39m     9    10
+## [90m 7[39m    10    18
+## [90m 8[39m    10    26
+## [90m 9[39m    10    34
+## [90m10[39m    11    17
+## [90m# … with 40 more rows[39m</code></pre>
 <!-- If you need PDF output, uncomment bookdown::pdf_book above in YAML. You will need a LaTeX installation, e.g., https://yihui.name/tinytex/ -->
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(</span>
-<span id="cb6-2"><a href="index.html#cb6-2"></a>  <span class="dt">collapse =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb6-3"><a href="index.html#cb6-3"></a>  <span class="dt">comment =</span> <span class="st">&quot;#&gt;&quot;</span>,</span>
-<span id="cb6-4"><a href="index.html#cb6-4"></a>  <span class="dt">fig.path =</span> <span class="st">&quot;man/figures/README-&quot;</span>,</span>
-<span id="cb6-5"><a href="index.html#cb6-5"></a>  <span class="dt">out.width =</span> <span class="st">&quot;100%&quot;</span></span>
-<span id="cb6-6"><a href="index.html#cb6-6"></a>)</span>
-<span id="cb6-7"><a href="index.html#cb6-7"></a></span>
-<span id="cb6-8"><a href="index.html#cb6-8"></a><span class="kw">library</span>(tibble)</span>
-<span id="cb6-9"><a href="index.html#cb6-9"></a><span class="kw">library</span>(crayon)</span>
-<span id="cb6-10"><a href="index.html#cb6-10"></a></span>
-<span id="cb6-11"><a href="index.html#cb6-11"></a><span class="co">## from: https://github.com/r-lib/crayon/issues/96</span></span>
-<span id="cb6-12"><a href="index.html#cb6-12"></a><span class="co"># options(crayon.enabled = NULL)</span></span></code></pre></div>
 </div>
             </section>
 
@@ -209,7 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 
-<a href="rendertest.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
