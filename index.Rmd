@@ -8,6 +8,13 @@ output:
   #bookdown::pdf_book: default
 ---
 
+```{r}
+library(crayon)
+library(tibble)
+library(fansi)
+```
+
+
 # Hello World
 
 Hi.
