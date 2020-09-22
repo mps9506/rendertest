@@ -79,6 +79,40 @@ as_tibble(cars)
 ```
 
 
+reset option
+
+```{r}
+
+options(crayon.enabled = TRUE)
+
+cat(blue("Hello", "world!\n"))
+
+as_tibble(cars)
+
+
+```
+
+
+Try `fansi`
+
+```{r}
+old.hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
+```
+
+
+check output
+
+```{r}
+
+cat(blue("Hello", "world!\n"))
+
+as_tibble(cars)
+
+er
+
+```
+
+
 ## session
 
 ```{r sessioninfo}
