@@ -128,6 +128,83 @@ as_tibble(cars)
 #> # … with 40 more rows
 ```
 
+reset option
+
+``` r
+
+options(crayon.enabled = TRUE)
+
+cat(blue("Hello", "world!\n"))
+#> [34mHello world!
+#> [39m
+
+as_tibble(cars)
+#> [90m# A tibble: 50 x 2[39m
+#>    speed  dist
+#>    [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m
+#> [90m 1[39m     4     2
+#> [90m 2[39m     4    10
+#> [90m 3[39m     7     4
+#> [90m 4[39m     7    22
+#> [90m 5[39m     8    16
+#> [90m 6[39m     9    10
+#> [90m 7[39m    10    18
+#> [90m 8[39m    10    26
+#> [90m 9[39m    10    34
+#> [90m10[39m    11    17
+#> [90m# … with 40 more rows[39m
+```
+
+Try `fansi`
+
+``` r
+old.hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
+#> <STYLE type='text/css' scoped>
+#> PRE.fansi SPAN {padding-top: .25em; padding-bottom: .25em};
+#> </STYLE>
+```
+
+check output
+
+``` r
+
+cat(blue("Hello", "world!\n"))
+```
+
+<PRE class="fansi fansi-output"><CODE>#&gt; <span style='color: #0000BB;'>Hello world!
+#&gt; </span><span>
+</span></CODE></PRE>
+
+``` r
+
+as_tibble(cars)
+```
+
+<PRE class="fansi fansi-output"><CODE>#&gt; <span style='color: #555555;'># A tibble: 50 x 2</span><span>
+#&gt;    speed  dist
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span>     4     2
+#&gt; </span><span style='color: #555555;'> 2</span><span>     4    10
+#&gt; </span><span style='color: #555555;'> 3</span><span>     7     4
+#&gt; </span><span style='color: #555555;'> 4</span><span>     7    22
+#&gt; </span><span style='color: #555555;'> 5</span><span>     8    16
+#&gt; </span><span style='color: #555555;'> 6</span><span>     9    10
+#&gt; </span><span style='color: #555555;'> 7</span><span>    10    18
+#&gt; </span><span style='color: #555555;'> 8</span><span>    10    26
+#&gt; </span><span style='color: #555555;'> 9</span><span>    10    34
+#&gt; </span><span style='color: #555555;'>10</span><span>    11    17
+#&gt; </span><span style='color: #555555;'># … with 40 more rows</span><span>
+</span></CODE></PRE>
+
+``` r
+
+er
+```
+
+<PRE class="fansi fansi-output"><CODE>#&gt; &lt;error: crayon::has_color() ?: TRUE 
+#&gt; result: <span style='color: #BB0000;'>A barfoo error</span><span>&gt;
+</span></CODE></PRE>
+
 ## session
 
 ``` r
