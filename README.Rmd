@@ -27,6 +27,18 @@ Trying to figure out encoding problems when I use github actions to render readm
 .Platform
 ```
 
+```{r}
+crayon::has_color()
+```
+
+```{r}
+er <- errorCondition(
+  message = paste("crayon::has_color() ?:",
+                  crayon::has_color(),
+                  "\nresult:",
+                  crayon::red("A barfoo error")))
+stop(er)
+```
 
 
 ## Example
