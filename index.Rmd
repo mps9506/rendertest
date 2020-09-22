@@ -30,8 +30,17 @@ as_tibble(cars)
 
 Try fansi hooks
 
+Check the rmarkdown output, if it is some type of html, use `fansi` highlighting. If it is pdf don't change the knitr hooks.
+
 ```{r}
-old.hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
+output <- rmarkdown::all_output_formats(knitr::current_input())[1]
+output
+
+if (output %in% c("html_document", "bookdown::html_document2", "bookdown::gitbook")) {
+  old.hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
+  }
+
+
 ```
 
 
