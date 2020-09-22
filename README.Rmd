@@ -13,26 +13,59 @@ knitr::opts_chunk$set(
 )
 
 library(tibble)
+library(crayon)
 
 ## from: https://github.com/r-lib/crayon/issues/96
-options(crayon.enabled = NULL)
+# options(crayon.enabled = NULL)
 ```
 
 # rendertest
 
 Trying to figure out encoding problems when I use github actions to render readme and pkgdown websites.
 
+```{r}
+.Platform
+```
+
+
 
 ## Example
 
+Print a tibble:
 
 ```{r cars}
 as_tibble(cars)
 ```
 
 ## unicode
+Print some unicode:
+Plain old unicode seems to work.
 
 Ā  ā Ġ ☂
+
+
+## Example Crayon
+
+print using crayon directly
+
+```{r}
+cat(blue("Hello", "world!\n"))
+```
+
+
+## Set options
+
+```{r}
+## from: https://github.com/r-lib/crayon/issues/96
+options(crayon.enabled = NULL)
+
+cat(blue("Hello", "world!\n"))
+
+as_tibble(cars)
+
+
+```
+
 
 ## session
 
