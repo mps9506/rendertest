@@ -37,7 +37,7 @@ er <- errorCondition(
                   crayon::has_color(),
                   "\nresult:",
                   crayon::red("A barfoo error")))
-stop(er)
+er
 ```
 
 
