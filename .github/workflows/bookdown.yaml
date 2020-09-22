@@ -19,8 +19,9 @@ jobs:
       - name: Install rmarkdown
         run: Rscript -e 'install.packages(c("rmarkdown","bookdown","tibble","sessioninfo","crayon","fansi"))'
       - name: Render Book
-        run: Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")'
-        run: Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::pdf_book")'
+        run: |
+          R -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")'
+          R -e 'bookdown::render_book("index.Rmd", "bookdown::pdf_book")'
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.7.0-8
