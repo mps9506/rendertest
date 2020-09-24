@@ -50,7 +50,7 @@ render readme and pkgdown websites.
 
 ``` r
 crayon::has_color()
-#> [1] TRUE
+#> [1] FALSE
 ```
 
 ``` r
@@ -60,8 +60,8 @@ er <- errorCondition(
                   "\nresult:",
                   crayon::red("A barfoo error")))
 er
-#> <error: crayon::has_color() ?: TRUE 
-#> result: [31mA barfoo error[39m>
+#> <error: crayon::has_color() ?: FALSE 
+#> result: A barfoo error>
 ```
 
 ## Example
@@ -69,48 +69,6 @@ er
 Print a tibble:
 
 ``` r
-as_tibble(cars)
-#> [90m# A tibble: 50 x 2[39m
-#>    speed  dist
-#>    [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m
-#> [90m 1[39m     4     2
-#> [90m 2[39m     4    10
-#> [90m 3[39m     7     4
-#> [90m 4[39m     7    22
-#> [90m 5[39m     8    16
-#> [90m 6[39m     9    10
-#> [90m 7[39m    10    18
-#> [90m 8[39m    10    26
-#> [90m 9[39m    10    34
-#> [90m10[39m    11    17
-#> [90m# … with 40 more rows[39m
-```
-
-## unicode
-
-Print some unicode: Plain old unicode seems to work.
-
-Ā ā Ġ ☂
-
-## Example Crayon
-
-print using crayon directly
-
-``` r
-cat(blue("Hello", "world!\n"))
-#> [34mHello world!
-#> [39m
-```
-
-## Set options
-
-``` r
-## from: https://github.com/r-lib/crayon/issues/96
-options(crayon.enabled = NULL)
-
-cat(blue("Hello", "world!\n"))
-#> Hello world!
-
 as_tibble(cars)
 #> # A tibble: 50 x 2
 #>    speed  dist
@@ -126,6 +84,29 @@ as_tibble(cars)
 #>  9    10    34
 #> 10    11    17
 #> # … with 40 more rows
+```
+
+## unicode
+
+Print some unicode: Plain old unicode seems to work.
+
+Ā ā Ġ ☂
+
+## Example Crayon
+
+print using crayon directly
+
+``` r
+cat(blue("Hello", "world!\n"))
+#> Hello world!
+```
+
+## Set options in yaml
+
+``` yml
+    - uses: r-lib/actions/setup-r@v1
+      with:
+        crayon.enabled: FALSE
 ```
 
 reset option
@@ -199,11 +180,9 @@ as_tibble(cars)
 ``` r
 
 er
+#> <error: crayon::has_color() ?: FALSE 
+#> result: A barfoo error>
 ```
-
-<PRE class="fansi fansi-output"><CODE>#&gt; &lt;error: crayon::has_color() ?: TRUE 
-#&gt; result: <span style='color: #BB0000;'>A barfoo error</span><span>&gt;
-</span></CODE></PRE>
 
 ## session
 
@@ -219,7 +198,7 @@ sessioninfo::session_info()
 #>  collate  C.UTF-8                     
 #>  ctype    C.UTF-8                     
 #>  tz       UTC                         
-#>  date     2020-09-22                  
+#>  date     2020-09-24                  
 #> 
 #> ─ Packages ───────────────────────────────────────────────────────────────────
 #>  package     * version date       lib source        
