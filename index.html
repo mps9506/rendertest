@@ -154,71 +154,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="hello-world" class="section level1">
 <h1><span class="header-section-number">1</span> Hello World</h1>
 <p>Example with default options.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">cat</span>(<span class="kw">blue</span>(<span class="st">&quot;Hello&quot;</span>, <span class="st">&quot;world!</span><span class="ch">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
-<pre><code>## [34mHello world!
-## [39m</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">as_tibble</span>(cars)</span></code></pre></div>
-<pre><code>## [90m# A tibble: 50 x 2[39m
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">as_tibble</span>(cars)</span></code></pre></div>
+<pre><code>## # A tibble: 50 x 2
 ##    speed  dist
-##    [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m
-## [90m 1[39m     4     2
-## [90m 2[39m     4    10
-## [90m 3[39m     7     4
-## [90m 4[39m     7    22
-## [90m 5[39m     8    16
-## [90m 6[39m     9    10
-## [90m 7[39m    10    18
-## [90m 8[39m    10    26
-## [90m 9[39m    10    34
-## [90m10[39m    11    17
-## [90m# … with 40 more rows[39m</code></pre>
-<p>Try fansi hooks</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>old.hooks &lt;-<span class="st"> </span>fansi<span class="op">::</span><span class="kw">set_knit_hooks</span>(knitr<span class="op">::</span>knit_hooks)</span></code></pre></div>
-<pre><code>## &lt;STYLE type=&#39;text/css&#39; scoped&gt;
-## PRE.fansi SPAN {padding-top: .25em; padding-bottom: .25em};
-## &lt;/STYLE&gt;</code></pre>
-<p>Please render correctly</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">cat</span>(<span class="kw">blue</span>(<span class="st">&quot;Hello&quot;</span>, <span class="st">&quot;world!</span><span class="ch">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
-<PRE class="fansi fansi-output"><CODE>## <span style='color: #0000BB;'>Hello world!
-## </span><span>
-</span></CODE></PRE>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">as_tibble</span>(cars)</span></code></pre></div>
-<PRE class="fansi fansi-output"><CODE>## <span style='color: #555555;'># A tibble: 50 x 2</span><span>
-##    speed  dist
-##    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-## </span><span style='color: #555555;'> 1</span><span>     4     2
-## </span><span style='color: #555555;'> 2</span><span>     4    10
-## </span><span style='color: #555555;'> 3</span><span>     7     4
-## </span><span style='color: #555555;'> 4</span><span>     7    22
-## </span><span style='color: #555555;'> 5</span><span>     8    16
-## </span><span style='color: #555555;'> 6</span><span>     9    10
-## </span><span style='color: #555555;'> 7</span><span>    10    18
-## </span><span style='color: #555555;'> 8</span><span>    10    26
-## </span><span style='color: #555555;'> 9</span><span>    10    34
-## </span><span style='color: #555555;'>10</span><span>    11    17
-## </span><span style='color: #555555;'># … with 40 more rows</span><span>
-</span></CODE></PRE>
-<p>Restore default hooks</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">do.call</span>(knitr<span class="op">::</span>knit_hooks<span class="op">$</span>set, old.hooks)</span></code></pre></div>
-<p>Please render incorrectly</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">cat</span>(<span class="kw">blue</span>(<span class="st">&quot;Hello&quot;</span>, <span class="st">&quot;world!</span><span class="ch">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
-<pre><code>## [34mHello world!
-## [39m</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">as_tibble</span>(cars)</span></code></pre></div>
-<pre><code>## [90m# A tibble: 50 x 2[39m
-##    speed  dist
-##    [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m
-## [90m 1[39m     4     2
-## [90m 2[39m     4    10
-## [90m 3[39m     7     4
-## [90m 4[39m     7    22
-## [90m 5[39m     8    16
-## [90m 6[39m     9    10
-## [90m 7[39m    10    18
-## [90m 8[39m    10    26
-## [90m 9[39m    10    34
-## [90m10[39m    11    17
-## [90m# … with 40 more rows[39m</code></pre>
+##    &lt;dbl&gt; &lt;dbl&gt;
+##  1     4     2
+##  2     4    10
+##  3     7     4
+##  4     7    22
+##  5     8    16
+##  6     9    10
+##  7    10    18
+##  8    10    26
+##  9    10    34
+## 10    11    17
+## # … with 40 more rows</code></pre>
 <!-- If you need PDF output, uncomment bookdown::pdf_book above in YAML. You will need a LaTeX installation, e.g., https://yihui.name/tinytex/ -->
 
 </div>
