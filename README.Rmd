@@ -65,16 +65,12 @@ cat(blue("Hello", "world!\n"))
 ```
 
 
-## Set options
+## Set options in yaml
 
-```{r}
-## from: https://github.com/r-lib/crayon/issues/96
-options(crayon.enabled = NULL)
-
-cat(blue("Hello", "world!\n"))
-
-as_tibble(cars)
-
+```yml
+    - uses: r-lib/actions/setup-r@v1
+      with:
+        crayon.enabled: FALSE
 
 ```
 

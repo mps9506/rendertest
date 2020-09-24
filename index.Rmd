@@ -12,7 +12,6 @@ output:
 ```{r}
 library(crayon)
 library(tibble)
-library(fansi)
 ```
 
 
@@ -22,58 +21,11 @@ Example with default options.
 
 ```{r}
 
-cat(blue("Hello", "world!\n"))
-
-as_tibble(cars)
-
-```
-
-Try fansi hooks
-
-Check the rmarkdown output, if it is some type of html, use `fansi` highlighting. If it is pdf don't change the knitr hooks.
-
-```{r}
-output_fmt <- knitr::opts_knit$get("rmarkdown.pandoc.to")
-
-
-if (output_fmt == "html") {
-  old.hooks <- fansi::set_knit_hooks(knitr::knit_hooks)
-  }
-
-
-```
-
-
-
-Please render correctly
-
-```{r}
-
-cat(blue("Hello", "world!\n"))
-
 as_tibble(cars)
 
 ```
 
 
-Restore default hooks
-
-```{r}
-if (output_fmt == "html") {
-  do.call(knitr::knit_hooks$set, old.hooks)
-}
-```
-
-
-Please render incorrectly
-
-```{r}
-
-cat(blue("Hello", "world!\n"))
-
-as_tibble(cars)
-
-```
 
 
 <!-- If you need PDF output, uncomment bookdown::pdf_book above in YAML. You will need a LaTeX installation, e.g., https://yihui.name/tinytex/ -->
